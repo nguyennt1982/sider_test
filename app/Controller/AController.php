@@ -2,9 +2,21 @@
 
 App::uses('AppController', 'Controller');
 
- */
-class AdminAbTestsController extends AppController
+class AController extends AppController
 {
+    /**
+     * Components
+     *
+     * @var array
+     */
+    public $components = ['Paginator', 'Flash'];
+
+    /** @var array Used Model */
+    public $uses = ['AbTest'];
+
+    /** @var string UseLayout */
+    public $layout = 'admin';
+
     /**
      * {@inheritdoc}
      */
