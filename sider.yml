@@ -1,6 +1,6 @@
 linter:
   code_sniffer:
-    dir: app/
+    dir: app/,psr4/
     standard: rulesets/phpcs.xml
     extensions: php
   phpmd:
