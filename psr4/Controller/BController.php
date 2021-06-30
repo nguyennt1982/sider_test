@@ -21,6 +21,7 @@ class BController extends AppController
      */
     public function beforeFilter()
     {
+        aaaaaaaaaaaaaaaaa
     }
 
     /**
