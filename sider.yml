@@ -4,7 +4,7 @@ linter:
     standard: psr4/phpcs.xml
     extensions: php
   phpmd:
-    rule: rulesets/phpmd.xml
+    rule: psr4/phpmd.xml
     suffixes: .php
     exclude: app/Config/Migration,app/Config/Schema,app/Plugin,app/Test,app/Vendor,app/webroot
   eslint:
