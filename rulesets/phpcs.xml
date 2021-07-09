@@ -1,31 +1,14 @@
 <?xml version="1.0"?>
 <ruleset name="peraichi coding standard">
-    <description>Customization PSR-2 coding-conventions.</description>
 
-    <exclude-pattern>app/Config/Migration/*</exclude-pattern>
-    <exclude-pattern>app/webroot/*</exclude-pattern>
-    <exclude-pattern>app/Console/cake.php</exclude-pattern>
-    <exclude-pattern>app/Vendor/*</exclude-pattern>
-    <exclude-pattern>app/Config/Schema/*</exclude-pattern>
-    <exclude-pattern>app/Plugin/*</exclude-pattern>
-    <exclude-pattern>app/Controller/AppController.php</exclude-pattern>
-    <exclude-pattern>app/Controller/PagesController.php</exclude-pattern>
-    <exclude-pattern>app/Model/AppModel.php</exclude-pattern>
-    <exclude-pattern>app/Test/*</exclude-pattern>
+    <rule ref="PSR12"/>
 
     <rule
-        ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar"
-        desc="文字列リテラル内の変数展開を許容する"
-        reason="記述が容易になるため"
+            ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar"
+            desc="文字列リテラル内の変数展開を許容する"
+            reason="記述が容易になるため"
     >
-        <exclude-pattern>app/*</exclude-pattern>
-    </rule>
-
-    <rule ref="PSR2">
-        <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
-        <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
-        <exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
-        <exclude name="Generic.Sniffs.Files.LineLengthSniff"/>
+        <exclude-pattern>src/*</exclude-pattern>
     </rule>
 
     <rule ref="Generic.Files.LineLength">
@@ -34,57 +17,40 @@
             <property name="absoluteLineLimit" value="200"/>
         </properties>
     </rule>
-
     <rule
-
-        ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"
-        desc="メソッド名の命名規則はキャメルケースとする"
-    >
-        <exclude-pattern
-            reason="URLとコントローラーアクション名はスネークケースで揃えるとマッピングが容易となるため"
-        >app/Controller/*</exclude-pattern>
-    </rule>
-
-    <rule
-        ref="CakePHP.Strings.ConcatenationSpacing"
-        desc="文字連結演算子`.`に関する諸々の規定"
-        reason="視認性向上"
+            ref="CakePHP.WhiteSpace"
+            desc="半角スペース` `に関する諸々の規定"
+            reason="視認性向上"
     />
 
     <rule
-        ref="CakePHP.WhiteSpace"
-        desc="半角スペース` `に関する諸々の規定"
-        reason="視認性向上"
-    />
-
-    <rule
-        ref="CakePHP.Commenting.FunctionComment"
-        desc="PHPDoc必須"
-        reason="関数のI/Fを明示してのメンテナンス性向上"
+            ref="CakePHP.Commenting.FunctionComment"
+            desc="PHPDoc必須"
+            reason="関数のI/Fを明示してのメンテナンス性向上"
     >
         <exclude
-            name="CakePHP.Commenting.FunctionComment.ParamCommentFullStop"
-            desc="@param行末のカンマは不要"
-            reason="日本語の句点には未対応のため"
+                name="CakePHP.Commenting.FunctionComment.ParamCommentFullStop"
+                desc="@param行末のカンマは不要"
+                reason="日本語の句点には未対応のため"
         />
         <exclude
-            name="CakePHP.Commenting.FunctionComment.ThrowsNoFullStop"
-            desc="@throws行末のカンマは不要"
-            reason="コメントは日本語での記述が主なため"
+                name="CakePHP.Commenting.FunctionComment.ThrowsNoFullStop"
+                desc="@throws行末のカンマは不要"
+                reason="コメントは日本語での記述が主なため"
         />
         <exclude
-            name="CakePHP.Commenting.FunctionComment.ParamCommentNotCapital"
-            desc="@paramのコメントは大文字アルファベット開始でなくて良い"
-            reason="コメントは日本語での記述が主なため"
+                name="CakePHP.Commenting.FunctionComment.ParamCommentNotCapital"
+                desc="@paramのコメントは大文字アルファベット開始でなくて良い"
+                reason="コメントは日本語での記述が主なため"
         />
     </rule>
     <rule ref="CakePHP.Commenting.FunctionComment.MissingReturn">
-        <exclude-pattern>app/Controller/*</exclude-pattern>
+        <exclude-pattern>src/Controller/*</exclude-pattern>
     </rule>
 
     <rule
-        ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"
-        desc="必要のないダブルクウォートを禁止する"
-        reason="変数展開の有無を明示する"
+            ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"
+            desc="必要のないダブルクウォートを禁止する"
+            reason="変数展開の有無を明示する"
     />
 </ruleset>
