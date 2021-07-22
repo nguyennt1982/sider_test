@@ -1,12 +1,13 @@
 linter:
   code_sniffer:
-    dir: app/,psr4/
+    dir: peraichi_v4/
     standard: rulesets/phpcs.xml
     extensions: php
   phpmd:
+    dir: peraichi_v4/
     rule: rulesets/phpmd.xml
     suffixes: .php
-    exclude: app/Config/Migration,app/Config/Schema,app/Plugin,app/Test,app/Vendor,app/webroot
+    exclude: app,peraichi_v4/src/Command
   eslint:
     config: 'app/webroot/.eslintrc'
     target: 'app/webroot/es'
