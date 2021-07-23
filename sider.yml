@@ -1,13 +1,23 @@
 linter:
   code_sniffer:
-    dir: peraichi_v4/
+    target: [peraichi_v4/src]
     standard: rulesets/phpcs.xml
+    ignore:
+      - peraichi_v4/src/Command
+      - peraichi_v4/src/Console
+      - peraichi_v4/src/Lib/Seed
+      - peraichi_v4/src/View
     extensions: php
   phpmd:
-    dir: peraichi_v4/
+    target:
+      - peraichi_v4/src
     rule: rulesets/phpmd.xml
     suffixes: .php
-    exclude: app,peraichi_v4/src/Command
+    exclude:
+      - peraichi_v4/src/Command
+      - peraichi_v4/src/Console
+      - peraichi_v4/src/Lib/Seed
+      - peraichi_v4/src/View
   eslint:
     config: 'app/webroot/.eslintrc'
     target: 'app/webroot/es'
